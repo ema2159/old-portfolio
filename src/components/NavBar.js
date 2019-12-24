@@ -1,10 +1,12 @@
 import React, { useRef } from "react";
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {AppBar, Button, Box, IconButton, Tabs, Tab, Toolbar, Typography} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import AccountTreeIcon from '@material-ui/icons/AccountTree';
 import MenuIcon from '@material-ui/icons/Menu';
 import DescriptionIcon from '@material-ui/icons/Description';
+import PersonPinIcon from '@material-ui/icons/PersonPin';
 import WorkIcon from '@material-ui/icons/Work';
 import SideMenu from './SideMenu.js';
 
@@ -85,9 +87,25 @@ const NavBar = () => {
 	      <Tabs value={value}
                     onChange={handleChange}
                     className={classes.tabs} >
-		<Tab icon={<DescriptionIcon />} label="Resume" {...a11yProps(0)} />
-		<Tab icon={<AccountTreeIcon />} label="Projects" {...a11yProps(1)} />
-		<Tab icon={<WorkIcon />} label="Work History" {...a11yProps(2)} />
+		<Tab icon={<PersonPinIcon />}
+                     label="About Me"
+		     to="/AboutMe"
+		     component={Link}
+                />
+		<Tab icon={<DescriptionIcon />}
+                     label="Resume"
+		     to="/Resume"
+		     component={Link}
+                     />
+		<Tab icon={<AccountTreeIcon />}
+                     label="Projects"
+		     to="/Projects"
+		     component={Link}
+                />
+		<Tab icon={<WorkIcon />}
+                     label="Work History"
+		     to="/WorkHistory"
+		     component={Link} />
 	      </Tabs>
 	    </Toolbar>
 	  </AppBar>
