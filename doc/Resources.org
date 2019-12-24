@@ -1,0 +1,5 @@
+#+TITLE: Project Resources
+#+AUTHOR: Emmanuel Bustos Torres
+
+* Useful Links
+  [[https://itnext.io/changing-children-state-from-another-component-with-react-hooks-5c982c042e8][Changing children's state from another component with React Hooks]]
