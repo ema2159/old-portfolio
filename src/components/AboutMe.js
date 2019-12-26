@@ -1,21 +1,29 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Card } from "@material-ui/core";
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
+import CardActions from "@material-ui/core/CardActions";
+import CardMedia from "@material-ui/core/CardMedia";
+import CardContent from "@material-ui/core/CardContent";
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
+import ParticlesBackground from "./ParticlesBackground.js";
 
 const useStyles = makeStyles(theme => ({
   aboutMeRoot: {
-    display: 'flex',
+    display: "flex",
     flexGrow: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: '100vh',
+    alignItems: "center",
+    justifyContent: "center",
+    height: "100vh",
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%"
   },
   card: {
-      minWidth: 275,
+    minWidth: 275,
+    position: "absolute",
   },
   bullet: {
     display: "inline-block",
@@ -26,9 +34,13 @@ const useStyles = makeStyles(theme => ({
     fontSize: 14
   },
   pos: {
-      marginBottom: 12,
-      color: 'white'
-  }
+    marginBottom: 12,
+    color: "white",
+    opacity: 1
+  },
+  cover: {
+    width: 151,
+  },
 }));
 
 const AboutMe = () => {
@@ -38,6 +50,7 @@ const AboutMe = () => {
 
   return (
     <div className={classes.aboutMeRoot} spacing={spacingVal}>
+      <ParticlesBackground />
       <Card className={classes.card}>
         <CardContent>
           <Typography
