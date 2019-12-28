@@ -74,11 +74,18 @@ const NavBar = () => {
       flexGrow: 1
     },
     appBar: {
+      position: "fixed",
+      top: 0,
       background: "#0F2027",
       background:
         "-webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027)",
       background: "linear-gradient(to right, #2C5364, #203A43, #0F2027)"
-    }
+    },
+    tabs: {
+    },
+    indicator: {
+      background: "#e8e8e8",
+    }    
   }));
 
   const classes = useStyles();
@@ -97,9 +104,13 @@ const NavBar = () => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            Emmanuel's Portfolio
+            Emmanuel Bustos Torres
           </Typography>
-          <Tabs value={value} onChange={handleChange} className={classes.tabs}>
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            className={classes.tabs}
+	    classes={{ indicator: classes.indicator }}          >
             <Tab
               icon={<PersonPinIcon />}
               label="About Me"
