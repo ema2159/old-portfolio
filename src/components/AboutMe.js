@@ -1,17 +1,17 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Card } from "@material-ui/core";
-import CardActions from "@material-ui/core/CardActions";
-import CardMedia from "@material-ui/core/CardMedia";
-import CardContent from "@material-ui/core/CardContent";
-import Button from "@material-ui/core/Button";
+import { Button, IconButton } from "@material-ui/core";
+import GitHubIcon from "@material-ui/icons/GitHub";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import Typography from "@material-ui/core/Typography";
 import ParticlesBackground from "./ParticlesBackground.js";
+import avatar from "../img/avatar.png";
 
 const useStyles = makeStyles(theme => ({
   aboutMeRoot: {
     display: "flex",
     flexGrow: 1,
+    flexFlow: "column",
     alignItems: "center",
     justifyContent: "center",
     height: "100vh",
@@ -21,26 +21,44 @@ const useStyles = makeStyles(theme => ({
     width: "100%",
     height: "100%"
   },
-  card: {
-    minWidth: 275,
-    position: "absolute",
-  },
-  bullet: {
-    display: "inline-block",
-    margin: "0 2px",
-    transform: "scale(0.8)"
-  },
   title: {
     fontSize: 14
   },
-  pos: {
-    marginBottom: 12,
+  box: {
+    position: "relative",
+    display: "flex",
+    flexFlow: "column",
+    alignItems: "center",
+    borderRadius: "15px",
+    height: "30vh",
+    width: "50vw",
     color: "white",
-    opacity: 1
+    background: "black",
+    opacity: 0.8
   },
-  cover: {
-    width: 151,
+  avatar: {
+    position: "relative",
+    width: "10vw",
+    height: "10vw"
   },
+  title: {
+    maxHeight: "3vh",
+    fontSize: "3vw",
+    color: "white"
+  },
+  header: {
+    borderTop: "5px solid white",
+    width: "60%",
+    height: "5"
+  },
+  skills: {
+    fontFamily: "serif",
+    fontSize: "1vw",
+    color: "white"
+  },
+  iconsContainer: {
+    display: "flex"
+  }
 }));
 
 const AboutMe = () => {
@@ -51,31 +69,34 @@ const AboutMe = () => {
   return (
     <div className={classes.aboutMeRoot} spacing={spacingVal}>
       <ParticlesBackground />
-      <Card className={classes.card}>
-        <CardContent>
-          <Typography
-            className={classes.title}
-            color="textSecondary"
-            gutterBottom
+      <img src={avatar} className={classes.avatar} />
+      <div className={classes.box}>
+        <h1 className={classes.title}>Electrical and Software Engineer</h1>
+        <hr className={classes.header} />
+        <p className={classes.skills}>
+          Python | Pandas | Tensorflow | Scikit-Learn | C | C++ | Bash | Verilog
+        </p>
+        <div className={classes.iconsContainer}>
+          <IconButton
+            color="inherit"
+            size="medium"
+            aria-label="delete"
+            href="https://github.com/ema2159"
+	    target="_blank"
           >
-            Word of the Day
-          </Typography>
-          <Typography variant="h5" component="h2">
-            be{bull}nev{bull}o{bull}lent
-          </Typography>
-          <Typography className={classes.pos} color="textSecondary">
-            adjective
-          </Typography>
-          <Typography variant="body2" component="p">
-            well meaning and kindly.
-            <br />
-            {'"a benevolent smile"'}
-          </Typography>
-        </CardContent>
-        <CardActions>
-          <Button size="small">Learn More</Button>
-        </CardActions>
-      </Card>
+            <GitHubIcon fontSize="large" />
+          </IconButton>
+          <IconButton
+            color="inherit"
+            size="medium"
+            aria-label="delete"
+            href="https://www.linkedin.com/in/emmanuel-bustos-3b8a48129/"
+	    target="_blank"
+          >
+            <LinkedInIcon fontSize="large" />
+          </IconButton>
+        </div>
+      </div>
     </div>
   );
 };
