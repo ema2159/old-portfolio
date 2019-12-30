@@ -30,7 +30,7 @@ const useStyles = makeStyles(theme => ({
     flexFlow: "column",
     alignItems: "center",
     borderRadius: "15px",
-    height: "30vh",
+    minHeight: "37vh",
     width: "50vw",
     color: "white",
     background: "black",
@@ -50,6 +50,9 @@ const useStyles = makeStyles(theme => ({
     borderTop: "5px solid white",
     width: "60%",
     height: "5"
+  },
+  description: {
+    textAlign: "center"
   },
   skills: {
     fontFamily: "serif",
@@ -73,8 +76,17 @@ const AboutMe = () => {
       <div className={classes.box}>
         <h1 className={classes.title}>Electrical and Software Engineer</h1>
         <hr className={classes.header} />
+        <p className={classes.description}>
+          I'm an electrical engineer specialized in computers and networks
+          graduated with honors from the University Of Costa Rica. I'm
+          interested in areas like machine learning, web development, embedded
+          software development, mathematics and physics among others. I tend to
+          learn quickly and I'm constantly working on improving and updating my
+          skills.
+        </p>
         <p className={classes.skills}>
-          Python | Pandas | Tensorflow | Scikit-Learn | C | C++ | Bash | Verilog
+          Python | Pandas | Tensorflow | Scikit-Learn | Linux | C++ | C |
+          Verilog
         </p>
         <div className={classes.iconsContainer}>
           <IconButton
@@ -82,7 +94,7 @@ const AboutMe = () => {
             size="medium"
             aria-label="delete"
             href="https://github.com/ema2159"
-	    target="_blank"
+            target="_blank"
           >
             <GitHubIcon fontSize="large" />
           </IconButton>
@@ -91,7 +103,7 @@ const AboutMe = () => {
             size="medium"
             aria-label="delete"
             href="https://www.linkedin.com/in/emmanuel-bustos-3b8a48129/"
-	    target="_blank"
+            target="_blank"
           >
             <LinkedInIcon fontSize="large" />
           </IconButton>

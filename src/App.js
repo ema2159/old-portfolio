@@ -8,13 +8,15 @@ class App extends Component {
   render() {
     return (
       <div style={{ height: "100vh",
+                    display: "flex",
+		    flexFlow: "column",
                     overflow: "auto",
 		    background: "#edefff",
 		    background: "-webkit-linear-gradient(to bottom, #FFFFFF, #edefff)",
 		    background: "linear-gradient(to bottom, #FFFFFF, #edefff)",
                   }}>
-	<Main />
         <NavBar />
+	<Main />
       </div>
     );
   }
