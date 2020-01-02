@@ -5,6 +5,7 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import Typography from "@material-ui/core/Typography";
 import ParticlesBackground from "./ParticlesBackground.js";
+import { emphasize, fade } from "@material-ui/core/styles/colorManipulator";
 import avatar from "../img/avatar.png";
 
 const useStyles = makeStyles(theme => ({
@@ -61,7 +62,12 @@ const useStyles = makeStyles(theme => ({
   },
   iconsContainer: {
     display: "flex"
-  }
+  },
+  aboutMeIcon: {
+    "&:hover": {
+      color: fade("#FFFFFF", 0.6)
+    }
+  },
 }));
 
 const AboutMe = () => {
@@ -90,6 +96,7 @@ const AboutMe = () => {
         </p>
         <div className={classes.iconsContainer}>
           <IconButton
+            className={classes.aboutMeIcon}
             color="inherit"
             size="medium"
             aria-label="delete"
@@ -99,6 +106,7 @@ const AboutMe = () => {
             <GitHubIcon fontSize="large" />
           </IconButton>
           <IconButton
+            className={classes.aboutMeIcon}
             color="inherit"
             size="medium"
             aria-label="delete"
