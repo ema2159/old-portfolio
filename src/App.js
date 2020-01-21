@@ -4,8 +4,7 @@ import Main from "./components/Main.js";
 import NavBar from "./components/NavBar.js";
 import { Container } from "@material-ui/core";
 
-class App extends Component {
-  render() {
+const App = () => {
     return (
       <div style={{ height: "100vh",
                     display: "flex",
@@ -16,10 +15,9 @@ class App extends Component {
 		    background: "linear-gradient(to bottom, #FFFFFF, #edefff)",
                   }}>
         <NavBar />
-	<Main />
+      <Main />
       </div>
     );
-  }
 }
 
 export default App;
