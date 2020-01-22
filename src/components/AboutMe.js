@@ -1,12 +1,10 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Button, IconButton } from "@material-ui/core";
+import { IconButton } from "@material-ui/core";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import Typography from "@material-ui/core/Typography";
 import ParticlesBackground from "./ParticlesBackground.js";
-import { emphasize, fade } from "@material-ui/core/styles/colorManipulator";
-import avatar from "../img/avatar.png";
+import { fade } from "@material-ui/core/styles/colorManipulator";
 
 const useStyles = makeStyles(theme => ({
   aboutMeRoot: {
@@ -15,15 +13,11 @@ const useStyles = makeStyles(theme => ({
     flexFlow: "column",
     alignItems: "center",
     justifyContent: "center",
-    height: "100vh",
     position: "absolute",
     top: 0,
     left: 0,
     width: "100%",
     height: "100%"
-  },
-  title: {
-    fontSize: 14
   },
   box: {
     position: "relative",
@@ -73,12 +67,10 @@ const useStyles = makeStyles(theme => ({
 const AboutMe = () => {
   const classes = useStyles();
   const spacingVal = 2;
-  const bull = <span className={classes.bullet}>•</span>;
 
   return (
     <div className={classes.aboutMeRoot} spacing={spacingVal}>
       <ParticlesBackground />
-      <img src={avatar} className={classes.avatar} />
       <div className={classes.box}>
         <h1 className={classes.title}>Electrical and Software Engineer</h1>
         <hr className={classes.header} />
@@ -92,7 +84,7 @@ const AboutMe = () => {
         </p>
         <p className={classes.skills}>
           Python | Pandas | Tensorflow | Scikit-Learn | Linux | C++ | C |
-          Verilog
+          Verilog | React
         </p>
         <div className={classes.iconsContainer}>
           <IconButton
