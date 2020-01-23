@@ -1,0 +1,14 @@
+[
+  {
+    "id": 0,
+    "name": "Centaur tabs",
+    "image": "centaur-tabs.png",
+    "description": "Owner. Emacs tabs plugin with over 200 Github stars and over 40 solved issues."
+  },
+  {
+    "id": 1,
+    "name": "Centaur tabs 2",
+    "image": "centaur-tabs.png",
+    "description": "Owner. Emacs tabs plugin with over 200 Github stars and over 40 solved issues."
+  }
+]
