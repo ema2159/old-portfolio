@@ -1,8 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import "./App.css";
 import Main from "./components/Main.js";
 import NavBar from "./components/NavBar.js";
-import { Container } from "@material-ui/core";
 
 const App = () => {
     return (
