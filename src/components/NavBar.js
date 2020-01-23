@@ -80,11 +80,10 @@ const NavBar = () => {
         "-webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027)",
       background: "linear-gradient(to right, #2C5364, #203A43, #0F2027)"
     },
-    tabs: {
-    },
+    tabs: {},
     indicator: {
-      background: "#e8e8e8",
-    }    
+      background: "#e8e8e8"
+    }
   }));
 
   const classes = useStyles();
@@ -109,17 +108,12 @@ const NavBar = () => {
             value={value}
             onChange={handleChange}
             className={classes.tabs}
-	    classes={{ indicator: classes.indicator }}          >
+            classes={{ indicator: classes.indicator }}
+          >
             <Tab
               icon={<PersonPinIcon />}
               label="About Me"
               to="/"
-              component={Link}
-            />
-            <Tab
-              icon={<DescriptionIcon />}
-              label="Resume"
-              to="/Resume"
               component={Link}
             />
             <Tab
@@ -132,6 +126,12 @@ const NavBar = () => {
               icon={<WorkIcon />}
               label="Work History"
               to="/WorkHistory"
+              component={Link}
+            />
+            <Tab
+              icon={<DescriptionIcon />}
+              label="Resume"
+              to="/Resume"
               component={Link}
             />
           </Tabs>
