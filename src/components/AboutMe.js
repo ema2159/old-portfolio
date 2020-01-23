@@ -47,7 +47,8 @@ const useStyles = makeStyles(theme => ({
     height: "5"
   },
   description: {
-    textAlign: "center"
+    textAlign: "justify",
+    margin: "15px",
   },
   skills: {
     fontFamily: "serif",
