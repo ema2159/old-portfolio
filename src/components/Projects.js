@@ -30,15 +30,39 @@ const useStyles = makeStyles(theme => ({
     height: "30vh",
     width: "23vw",
     display: "flex",
+    borderRadius: "10px",
     flexGrow: 1,
     flexFlow: "column",
     alignItems: "center",
-    justifyContent: "center",
-    backgroundImage: `url(${emacsImage})`,
-    backgroundPosition: "center", 
-    backgroundSize: "cover", 
-    backgroundRepeat: "no-repeat",
-  }
+    background: "#172D35",
+  },
+  header: {
+    position: "relative",
+    width: "100%",
+    height: "30%",
+    background: "#F8F8F8",
+    borderTopLeftRadius: "10px",
+    borderTopRightRadius: "10px",
+  },
+  title: {
+    color: "#264653",
+    marginLeft: "2%",
+  },
+  body: {
+  },
+  text: {
+    textAlign: "justify",
+    marginLeft: "5%",
+    marginRight: "5%",
+    color: "#E0E0E0"
+  },
+  image: {
+    position: "relative",
+    height: "auto", 
+    width: "auto", 
+    maxWidth: "80%", 
+    maxHeight: "80%",
+  },
 }));
 
 // Project objects
@@ -48,14 +72,19 @@ const Projects = () => {
   return (
     <div className={classes.root}>
       <Grid className={classes.grid} item xs={12}>
-        <Grid container justify="center" spacing={2}>
+        <Grid container justify="center" spacing={1}>
           {projectsJSON.map(project => (
             <Grid key={project.id} item>
               <Paper className={classes.paper}>
-                <h1>{project.name}</h1>
-                <p style={{ textAlign: "justify", margin: "10px" }}>
-                  {project.description}
-                </p>
+                <div className={classes.header}>
+                  <h1 className={classes.title}>{project.name}</h1>
+                  <img className={classes.image} src={emacsImage}/>
+                </div>
+                <div className={classes.body}>
+                  <p className={classes.text}>
+                    {project.description}
+                  </p>
+                </div>
               </Paper>
             </Grid>
           ))}
