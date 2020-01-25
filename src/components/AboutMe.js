@@ -5,7 +5,10 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import ParticlesBackground from "./ParticlesBackground.js";
 import { fade } from "@material-ui/core/styles/colorManipulator";
+import styled, { keyframes } from "styled-components";
+import { merge, fadeIn, slideInRight } from "react-animations";
 
+// Styles
 const useStyles = makeStyles(theme => ({
   aboutMeRoot: {
     display: "flex",
@@ -48,7 +51,7 @@ const useStyles = makeStyles(theme => ({
   },
   description: {
     textAlign: "justify",
-    margin: "15px",
+    margin: "15px"
   },
   skills: {
     fontFamily: "serif",
@@ -62,9 +65,15 @@ const useStyles = makeStyles(theme => ({
     "&:hover": {
       color: fade("#FFFFFF", 0.6)
     }
-  },
+  }
 }));
 
+// Animations
+const BoxAnimation = styled.div`
+  animation: 0.7s ${keyframes(merge(fadeIn,slideInRight))};
+`;
+
+// Main component
 const AboutMe = () => {
   const classes = useStyles();
   const spacingVal = 2;
@@ -72,44 +81,46 @@ const AboutMe = () => {
   return (
     <div className={classes.aboutMeRoot} spacing={spacingVal}>
       <ParticlesBackground />
-      <div className={classes.box}>
-        <h1 className={classes.title}>Electrical and Software Engineer</h1>
-        <hr className={classes.header} />
-        <p className={classes.description}>
-          I'm an electrical engineer specialized in computers and networks
-          graduated with honors from the University Of Costa Rica. I'm
-          interested in areas like machine learning, web development, embedded
-          software development, mathematics and physics among others. I tend to
-          learn quickly and I'm constantly working on improving and updating my
-          skills.
-        </p>
-        <p className={classes.skills}>
-          Python | Pandas | Tensorflow | Scikit-Learn | Linux | C++ | C |
-          Verilog | React
-        </p>
-        <div className={classes.iconsContainer}>
-          <IconButton
-            className={classes.aboutMeIcon}
-            color="inherit"
-            size="medium"
-            aria-label="delete"
-            href="https://github.com/ema2159"
-            target="_blank"
-          >
-            <GitHubIcon fontSize="large" />
-          </IconButton>
-          <IconButton
-            className={classes.aboutMeIcon}
-            color="inherit"
-            size="medium"
-            aria-label="delete"
-            href="https://www.linkedin.com/in/emmanuel-bustos-3b8a48129/"
-            target="_blank"
-          >
-            <LinkedInIcon fontSize="large" />
-          </IconButton>
+      <BoxAnimation>
+        <div className={classes.box}>
+          <h1 className={classes.title}>Electrical and Software Engineer</h1>
+          <hr className={classes.header} />
+          <p className={classes.description}>
+            I'm an electrical engineer specialized in computers and networks
+            graduated with honors from the University Of Costa Rica. I'm
+            interested in areas like machine learning, web development, embedded
+            software development, mathematics and physics among others. I tend
+            to learn quickly and I'm constantly working on improving and
+            updating my skills.
+          </p>
+          <p className={classes.skills}>
+            Python | Pandas | Tensorflow | Scikit-Learn | Linux | C++ | C |
+            Verilog | React
+          </p>
+          <div className={classes.iconsContainer}>
+            <IconButton
+              className={classes.aboutMeIcon}
+              color="inherit"
+              size="medium"
+              aria-label="delete"
+              href="https://github.com/ema2159"
+              target="_blank"
+            >
+              <GitHubIcon fontSize="large" />
+            </IconButton>
+            <IconButton
+              className={classes.aboutMeIcon}
+              color="inherit"
+              size="medium"
+              aria-label="delete"
+              href="https://www.linkedin.com/in/emmanuel-bustos-3b8a48129/"
+              target="_blank"
+            >
+              <LinkedInIcon fontSize="large" />
+            </IconButton>
+          </div>
         </div>
-      </div>
+      </BoxAnimation>
     </div>
   );
 };
