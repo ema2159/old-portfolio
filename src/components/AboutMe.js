@@ -6,7 +6,7 @@ import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import ParticlesBackground from "./ParticlesBackground.js";
 import { fade } from "@material-ui/core/styles/colorManipulator";
 import styled, { keyframes } from "styled-components";
-import { merge, fadeIn, slideInRight } from "react-animations";
+import { fadeIn } from "react-animations";
 
 // Styles
 const useStyles = makeStyles(theme => ({
@@ -70,7 +70,7 @@ const useStyles = makeStyles(theme => ({
 
 // Animations
 const BoxAnimation = styled.div`
-  animation: 0.7s ${keyframes(merge(fadeIn,slideInRight))};
+  animation: 0.5s ${keyframes(fadeIn)};
 `;
 
 // Main component
