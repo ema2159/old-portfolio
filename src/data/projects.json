@@ -1,14 +1,23 @@
 [
   {
     "id": 0,
-    "name": "Centaur tabs",
-    "image": "centaur-tabs.png",
-    "description": "Owner. Emacs tabs plugin with over 200 Github stars and over 40 solved issues."
+    "name": "Centaur Tabs",
+    "image": "emacsImage",
+    "description": "Owner. Emacs tabs plugin with over 200 Github stars and over 40 solved issues.",
+    "github": "https://github.com/ema2159/centaur-tabs"
   },
   {
     "id": 1,
-    "name": "Centaur tabs 2",
-    "image": "centaur-tabs.png",
-    "description": "Owner. Emacs tabs plugin with over 200 Github stars and over 40 solved issues."
+    "name": "Doom Themes",
+    "image": "emacsImage",
+    "description": "Maintainter. Emacs themes plugin with over 1000 Github stars, used widely by the community.",
+    "github": "https://github.com/hlissner/emacs-doom-themes"
+  },
+  {
+    "id": 0,
+    "name": "Personal portfolio",
+    "image": "reactImage",
+    "description": "Owner. This very portfolio, created from scratch using React.js with no prior knowledge on the tecnology.",
+    "github": "https://github.com/ema2159/Portfolio"
   }
 ]
