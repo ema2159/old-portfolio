@@ -56,7 +56,7 @@ const useStyles = makeStyles(theme => ({
   },
   skills: {
     fontFamily: "serif",
-    fontSize: "1vw",
+    fontSize: "calc(10px + 0.5vw)",
     color: "white"
   },
   iconsContainer: {
