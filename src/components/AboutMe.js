@@ -7,6 +7,7 @@ import ParticlesBackground from "./ParticlesBackground.js";
 import { fade } from "@material-ui/core/styles/colorManipulator";
 import styled, { keyframes } from "styled-components";
 import { fadeIn } from "react-animations";
+import { Typography } from "@material-ui/core";
 
 // Styles
 const useStyles = makeStyles(theme => ({
@@ -44,7 +45,7 @@ const useStyles = makeStyles(theme => ({
     fontSize: "3vw",
     color: "white"
   },
-  header: {
+  headerDivider: {
     borderTop: "5px solid white",
     width: "60%",
     height: "5"
@@ -84,15 +85,15 @@ const AboutMe = () => {
       <BoxAnimation>
         <div className={classes.box}>
           <h1 className={classes.title}>Electrical and Software Engineer</h1>
-          <hr className={classes.header} />
-          <p className={classes.description}>
+          <hr className={classes.headerDivider} />
+          <Typography variant="body1" className={classes.description}>
             I'm an electrical engineer specialized in computers and networks
             graduated with honors from the University Of Costa Rica. I'm
             interested in areas like machine learning, web development, embedded
             software development, mathematics and physics among others. I tend
             to learn quickly and I'm constantly working on improving and
             updating my skills.
-          </p>
+          </Typography>
           <p className={classes.skills}>
             Python | Pandas | Tensorflow | Scikit-Learn | Linux | C++ | C |
             Verilog | React
@@ -102,7 +103,6 @@ const AboutMe = () => {
               className={classes.aboutMeIcon}
               color="inherit"
               size="medium"
-              aria-label="delete"
               href="https://github.com/ema2159"
               target="_blank"
             >
@@ -112,7 +112,6 @@ const AboutMe = () => {
               className={classes.aboutMeIcon}
               color="inherit"
               size="medium"
-              aria-label="delete"
               href="https://www.linkedin.com/in/emmanuel-bustos-3b8a48129/"
               target="_blank"
             >
