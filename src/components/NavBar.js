@@ -123,15 +123,16 @@ const NavBar = () => {
               component={Link}
             />
             <Tab
-              icon={<WorkIcon />}
-              label="Work History"
-              to="/WorkHistory"
-              component={Link}
-            />
-            <Tab
               icon={<DescriptionIcon />}
               label="Resume"
               to="/Resume"
+              component={Link}
+            />
+            <Tab
+              disabled
+              icon={<WorkIcon />}
+              label="Work History"
+              to="/WorkHistory"
               component={Link}
             />
           </Tabs>
