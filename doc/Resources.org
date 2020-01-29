@@ -1,9 +1,0 @@
-#+TITLE: Project Resources
-#+AUTHOR: Emmanuel Bustos Torres
-
-* Useful Links
-  - [[https://material-ui.com/es/][Material UI components]]
-  - [[https://itnext.io/changing-children-state-from-another-component-with-react-hooks-5c982c042e8][Changing children's state from another component with React Hooks]]
-  - [[https://css-tricks.com/snippets/css/a-guide-to-flexbox/][Flexbox information]]
-  - [[https://medium.com/@oleg008/arrow-functions-in-react-f782d11460b4][Arrow Functions in React]]
-  - [[https://medium.com/@Zwenza/functional-vs-class-components-in-react-231e3fbd7108][Functional vs class components]]
