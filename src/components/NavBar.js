@@ -70,12 +70,12 @@ const NavBar = () => {
       marginRight: theme.spacing(2)
     },
     title: {
-      flexGrow: 1
+      flexGrow: 1,
     },
     appBar: {
       position: "fixed",
       top: 0,
-      background: "#0F2027",
+      background: "#203A43",
       background:
         "-webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027)",
       background: "linear-gradient(to right, #2C5364, #203A43, #0F2027)"
