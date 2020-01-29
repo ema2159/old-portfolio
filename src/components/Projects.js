@@ -37,7 +37,7 @@ const useStyles = makeStyles(theme => ({
   },
   innerGrid: {
     width: "50vw",
-    justifyContent: "left",
+    justifyContent: "left"
   },
   paper: {
     height: "30vh",
@@ -100,6 +100,7 @@ const useStyles = makeStyles(theme => ({
     height: "4vh",
     fontSize: "calc(10px + 0.3vw)",
     "&:hover": {
+      color: "#F8F8F8",
       borderColor: "#5E81AC",
       background: "#5E81AC"
     }
@@ -119,41 +120,49 @@ const Projects = () => {
   return (
     <div className={classes.root}>
       <Grid className={classes.grid} item xs={12}>
-	<Grid
-	  container
-	  className={classes.innerGrid}
-	  justify="center"
-	  spacing={2}
-	>
-	  {projectsJSON.map((project, index) => (
-	    <Grid key={project.id} item>
-	    <ProjectsAnimation time={index < 8 ? 0.5+0.2*index+"s" : index%2 ? "2s" :"1.8s"}>
-		<Paper className={classes.paper}>
-		  <div className={classes.header}>
-		    <img className={classes.image} src={eval(project.image)} />
-		    <h1 className={classes.title}>{project.name}</h1>
-		  </div>
-		  <div className={classes.body}>
-		    <div>
-		      <Typography variant="body1" className={classes.text}>
-			{project.description}
-		      </Typography>
-		      <hr className={classes.headerDivider} />
-		    </div>
-		    <div>
-		      <Button
-			className={classes.githubButton}
-			variant="outlined"
-			color="primary"
-			size="medium"
-			href={project.github}
-			target="_blank"
-		      >
-			Github
-		      </Button>
-		    </div>
-		  </div>
-		</Paper>
+        <Grid
+          container
+          className={classes.innerGrid}
+          justify="center"
+          spacing={2}
+        >
+          {projectsJSON.map((project, index) => (
+            <Grid key={project.id} item>
+              <ProjectsAnimation
+                time={
+                  index < 8
+                    ? 0.5 + 0.2 * index + "s"
+                    : index % 2
+                    ? "2s"
+                    : "1.8s"
+                }
+              >
+                <Paper className={classes.paper}>
+                  <div className={classes.header}>
+                    <img className={classes.image} src={eval(project.image)} />
+                    <h1 className={classes.title}>{project.name}</h1>
+                  </div>
+                  <div className={classes.body}>
+                    <div>
+                      <Typography variant="body1" className={classes.text}>
+                        {project.description}
+                      </Typography>
+                      <hr className={classes.headerDivider} />
+                    </div>
+                    <div>
+                      <Button
+                        className={classes.githubButton}
+                        variant="outlined"
+                        color="primary"
+                        size="medium"
+                        href={project.github}
+                        target="_blank"
+                      >
+                        Github
+                      </Button>
+                    </div>
+                  </div>
+                </Paper>
               </ProjectsAnimation>
             </Grid>
           ))}
