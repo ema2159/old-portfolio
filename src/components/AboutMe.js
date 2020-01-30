@@ -18,8 +18,6 @@ const useStyles = makeStyles(theme => ({
     alignItems: "center",
     justifyContent: "center",
     position: "absolute",
-    top: 0,
-    left: 0,
     width: "100%",
     height: "100%"
   },
@@ -33,6 +31,9 @@ const useStyles = makeStyles(theme => ({
     width: "50vw",
     color: "white",
     background: "black",
+    ['@media (max-width:900px)']: {
+      width: "90vw",
+    },
     opacity: 0.8
   },
   avatar: {
@@ -43,6 +44,9 @@ const useStyles = makeStyles(theme => ({
   title: {
     maxHeight: "3vh",
     fontSize: "3vw",
+    ['@media (max-width:900px)']: {
+      fontSize: "calc(18px + 0.9vw)",
+    },
     color: "white"
   },
   headerDivider: {
@@ -52,9 +56,15 @@ const useStyles = makeStyles(theme => ({
   },
   description: {
     textAlign: "justify",
-    margin: "15px"
+    margin: "15px",
+    fontSize: "calc(8px + 0.5vw)",
+    ['@media (max-width:900px)']: {
+      fontSize: "calc(10px + 0.4vw)",
+    },
   },
   skills: {
+    textAlign: "center",
+    margin: "15px",
     fontFamily: "serif",
     fontSize: "calc(10px + 0.5vw)",
     color: "white"
