@@ -36,8 +36,12 @@ const useStyles = makeStyles(theme => ({
     alignItems: "flex-start"
   },
   innerGrid: {
-    width: "50vw",
-    justifyContent: "left"
+    width: "90vw",
+    justifyContent: "center",
+    ['@media (max-width:1100px)']: {
+      width: "90vw",
+      justifyContent: "center",
+    },
   },
   paper: {
     height: "30vh",
@@ -47,7 +51,11 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
     flexFlow: "column",
     alignItems: "center",
-    background: "#F8F8F8"
+    background: "#F8F8F8",
+    ['@media (max-width:780px)']: {
+      width: "60vw",
+      justifyContent: "center",
+    },
   },
   header: {
     position: "relative",
@@ -69,7 +77,8 @@ const useStyles = makeStyles(theme => ({
     textAlign: "center",
     display: "flex",
     flexFlow: "column",
-    justifyContent: "space-around"
+    justifyContent: "space-between",
+    overflow: "auto",
   },
   text: {
     textAlign: "justify",
@@ -78,7 +87,10 @@ const useStyles = makeStyles(theme => ({
     marginTop: "5%",
     marginBottom: "5%",
     color: "#264653",
-    fontSize: "calc(10px + 0.3vw)"
+    fontSize: "calc(10px + 0.3vw)",
+    ['@media (max-width:780px)']: {
+      fontSize: "calc(12px + 0.3vw)",
+    },
   },
   image: {
     height: "auto",
@@ -92,6 +104,10 @@ const useStyles = makeStyles(theme => ({
     color: "#F8F8F8",
     marginTop: "10px",
     width: "70%"
+  },
+  buttonContainer: {
+    // alignSelf: "flex-end",
+    marginBottom: "10px",
   },
   githubButton: {
     color: "#264653",
@@ -130,7 +146,7 @@ const Projects = () => {
             <Grid key={project.id} item>
               <ProjectsAnimation
                 time={
-                  index < 8
+                  index < 12
                     ? 0.5 + 0.2 * index + "s"
                     : index % 2
                     ? "2s"
@@ -149,7 +165,7 @@ const Projects = () => {
                       </Typography>
                       <hr className={classes.headerDivider} />
                     </div>
-                    <div>
+                    <div className={classes.buttonContainer}>
                       <Button
                         className={classes.githubButton}
                         variant="outlined"
