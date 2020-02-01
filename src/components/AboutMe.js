@@ -52,7 +52,7 @@ const useStyles = makeStyles(theme => ({
   },
   headerDivider: {
     borderTop: "5px solid white",
-    margin: "10px",
+    marginTop: "15px",
     width: "60%",
     height: "5"
   },
