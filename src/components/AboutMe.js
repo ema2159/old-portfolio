@@ -31,7 +31,7 @@ const useStyles = makeStyles(theme => ({
     width: "50vw",
     color: "white",
     background: "black",
-    ['@media (max-width:900px)']: {
+    ['@media (max-width:1100px)']: {
       width: "90vw",
     },
     opacity: 0.8
@@ -44,13 +44,15 @@ const useStyles = makeStyles(theme => ({
   title: {
     maxHeight: "3vh",
     fontSize: "3vw",
-    ['@media (max-width:900px)']: {
-      fontSize: "calc(18px + 0.9vw)",
+    textAlign: "center",
+    ['@media (max-width:1100px)']: {
+      fontSize: "calc(16px + 0.9vw)",
     },
     color: "white"
   },
   headerDivider: {
     borderTop: "5px solid white",
+    margin: "10px",
     width: "60%",
     height: "5"
   },
@@ -58,7 +60,7 @@ const useStyles = makeStyles(theme => ({
     textAlign: "justify",
     margin: "15px",
     fontSize: "calc(8px + 0.5vw)",
-    ['@media (max-width:900px)']: {
+    ['@media (max-width:1100px)']: {
       fontSize: "calc(10px + 0.4vw)",
     },
   },
