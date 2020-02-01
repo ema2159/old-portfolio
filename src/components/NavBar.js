@@ -64,13 +64,16 @@ const NavBar = () => {
   // Styles
   const useStyles = makeStyles(theme => ({
     root: {
-      flexGrow: 1
     },
     menuButton: {
-      marginRight: theme.spacing(2)
+      marginRight: theme.spacing(2),
+    ['@media (min-width:1100px)']: {
+      display: "none",
+    },
     },
     title: {
       flexGrow: 1,
+      fontSize: "calc(17px + 0.3vw)",
     },
     appBar: {
       position: "fixed",
@@ -80,7 +83,11 @@ const NavBar = () => {
         "-webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027)",
       background: "linear-gradient(to right, #2C5364, #203A43, #0F2027)"
     },
-    tabs: {},
+    tabs: {
+    ['@media (max-width:1100px)']: {
+      display: "none",
+    },
+    },
     indicator: {
       background: "#e8e8e8"
     }
