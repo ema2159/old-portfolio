@@ -1,6 +1,8 @@
+// Libraries and libraries' elements
 import React, { useState, forwardRef, useImperativeHandle } from "react";
 import { Drawer, IconButton } from "@material-ui/core";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { Link } from "react-router-dom";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import Divider from "@material-ui/core/Divider";
@@ -13,8 +15,13 @@ import DescriptionIcon from "@material-ui/icons/Description";
 import PersonPinIcon from "@material-ui/icons/PersonPin";
 import WorkIcon from "@material-ui/icons/Work";
 
+// Components
+import ResumePDF from "../data/resume.pdf";
+
+// Variables
 const drawerWidth = "270px";
 
+// Styles
 const useStyles = makeStyles(theme => ({
   root: {
     display: "flex"
@@ -77,7 +84,9 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+// Main Component
 const SideMenu = forwardRef((props, ref) => {
+  // Drawer functions and properties
   const classes = useStyles();
   const theme = useTheme();
 
@@ -117,35 +126,37 @@ const SideMenu = forwardRef((props, ref) => {
         </IconButton>
       </div>
       <List>
-	<Divider/>
-	<ListItem button>
+        <Divider />
+        <ListItem button label="About Me" to="/" component={Link}>
           <ListItemIcon className={classes.drawerIcon}>
             <PersonPinIcon />
           </ListItemIcon>
           <ListItemText className={classes.drawerText}>About Me</ListItemText>
         </ListItem>
-        <Divider/>
-        <ListItem button>
+        <Divider />
+        <ListItem button label="Projects" to="/Projects" component={Link}>
           <ListItemIcon className={classes.drawerIcon}>
             <AccountTreeIcon />
           </ListItemIcon>
           <ListItemText className={classes.drawerText}>Projects</ListItemText>
         </ListItem>
-        <Divider/>
+        <Divider />
         <ListItem button>
           <ListItemIcon className={classes.drawerIcon}>
             <WorkIcon />
           </ListItemIcon>
-          <ListItemText className={classes.drawerText}>Work History</ListItemText>
+          <ListItemText className={classes.drawerText}>
+            Work History
+          </ListItemText>
         </ListItem>
-        <Divider/>
-        <ListItem button>
+        <Divider />
+        <ListItem button label="Resume" component="a" target="_blank" href={ResumePDF}>
           <ListItemIcon className={classes.drawerIcon}>
             <DescriptionIcon />
           </ListItemIcon>
           <ListItemText className={classes.drawerText}>Resume</ListItemText>
         </ListItem>
-        <Divider/>
+        <Divider />
       </List>
     </Drawer>
   );
