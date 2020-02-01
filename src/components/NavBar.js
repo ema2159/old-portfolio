@@ -1,3 +1,4 @@
+// Libraries and libraries' elements
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
@@ -16,7 +17,40 @@ import MenuIcon from "@material-ui/icons/Menu";
 import DescriptionIcon from "@material-ui/icons/Description";
 import PersonPinIcon from "@material-ui/icons/PersonPin";
 import WorkIcon from "@material-ui/icons/Work";
+
+// Components
+import ResumePDF from "../data/resume.pdf";
 import SideMenu from "./SideMenu.js";
+
+// Styles
+const useStyles = makeStyles(theme => ({
+  root: {},
+  menuButton: {
+    marginRight: theme.spacing(2),
+    ["@media (min-width:1100px)"]: {
+      display: "none"
+    }
+  },
+  title: {
+    flexGrow: 1,
+    fontSize: "calc(17px + 0.3vw)"
+  },
+  appBar: {
+    position: "fixed",
+    top: 0,
+    background: "#203A43",
+    background: "-webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027)",
+    background: "linear-gradient(to right, #2C5364, #203A43, #0F2027)",
+  },
+  tabs: {
+    ["@media (max-width:1100px)"]: {
+      display: "none"
+    }
+  },
+  indicator: {
+    background: "#e8e8e8"
+  }
+}));
 
 const NavBar = () => {
   // Tabs functions and properties
@@ -61,38 +95,6 @@ const NavBar = () => {
     ref.current.handleDrawerOpen();
   };
 
-  // Styles
-  const useStyles = makeStyles(theme => ({
-    root: {
-    },
-    menuButton: {
-      marginRight: theme.spacing(2),
-    ['@media (min-width:1100px)']: {
-      display: "none",
-    },
-    },
-    title: {
-      flexGrow: 1,
-      fontSize: "calc(17px + 0.3vw)",
-    },
-    appBar: {
-      position: "fixed",
-      top: 0,
-      background: "#203A43",
-      background:
-        "-webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027)",
-      background: "linear-gradient(to right, #2C5364, #203A43, #0F2027)"
-    },
-    tabs: {
-    ['@media (max-width:1100px)']: {
-      display: "none",
-    },
-    },
-    indicator: {
-      background: "#e8e8e8"
-    }
-  }));
-
   const classes = useStyles();
 
   return (
@@ -130,17 +132,18 @@ const NavBar = () => {
               component={Link}
             />
             <Tab
-              icon={<DescriptionIcon />}
-              label="Resume"
-              to="/Resume"
-              component={Link}
-            />
-            <Tab
               disabled
               icon={<WorkIcon />}
               label="Work History"
-              to="/WorkHistory"
+              to="/Work History"
               component={Link}
+            />
+            <Tab
+              icon={<DescriptionIcon />}
+              label="Resume"
+              target="_blank"
+              href={ResumePDF}
+              /* component={Link} */
             />
           </Tabs>
         </Toolbar>
