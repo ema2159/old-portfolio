@@ -50,6 +50,7 @@ const useStyles = makeStyles(theme => ({
     color: "white"
   },
   headerDivider: {
+    border: 0,
     borderTop: "5px solid white",
     ['@media (max-width:312px)']: {
       marginTop: "15px",

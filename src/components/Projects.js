@@ -95,13 +95,13 @@ const useStyles = makeStyles(theme => ({
     maxHeight: "50%"
   },
   headerDivider: {
+    border: 0,
     borderTop: "2px solid #264653",
     color: "#F8F8F8",
     marginTop: "10px",
     width: "70%"
   },
   buttonContainer: {
-    // alignSelf: "flex-end",
     marginBottom: "10px",
   },
   githubButton: {
