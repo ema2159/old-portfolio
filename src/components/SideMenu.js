@@ -13,7 +13,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import AccountTreeIcon from "@material-ui/icons/AccountTree";
 import DescriptionIcon from "@material-ui/icons/Description";
 import PersonPinIcon from "@material-ui/icons/PersonPin";
-import WorkIcon from "@material-ui/icons/Work";
+import ContactPhoneIcon from "@material-ui/icons/ContactPhone";
 
 // Components
 import ResumePDF from "../data/resume.pdf";
@@ -141,12 +141,12 @@ const SideMenu = forwardRef((props, ref) => {
           <ListItemText className={classes.drawerText}>Projects</ListItemText>
         </ListItem>
         <Divider />
-        <ListItem button>
+        <ListItem button label="Contact" to="/Contact" component={Link}>
           <ListItemIcon className={classes.drawerIcon}>
-            <WorkIcon />
+            <ContactPhoneIcon />
           </ListItemIcon>
           <ListItemText className={classes.drawerText}>
-            Work History
+            Contact
           </ListItemText>
         </ListItem>
         <Divider />

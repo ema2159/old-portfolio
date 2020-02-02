@@ -3,7 +3,7 @@ import { Switch, Route } from "react-router-dom";
 
 import AboutMe from "./AboutMe.js";
 import Resume from "./Resume.js";
-import WorkHistory from "./WorkHistory.js";
+import Contact from "./Contact.js";
 import Projects from "./Projects.js";
 
 const Main = () => {
@@ -12,7 +12,7 @@ const Main = () => {
       <Route exact path="/" component={AboutMe} />
       <Route path="/Resume" component={Resume} />
       <Route path="/Projects" component={Projects} />
-      <Route path="/WorkHistory" component={WorkHistory} />
+      <Route path="/Contact" component={Contact} />
     </Switch>
   );
 };

@@ -16,7 +16,7 @@ import AccountTreeIcon from "@material-ui/icons/AccountTree";
 import MenuIcon from "@material-ui/icons/Menu";
 import DescriptionIcon from "@material-ui/icons/Description";
 import PersonPinIcon from "@material-ui/icons/PersonPin";
-import WorkIcon from "@material-ui/icons/Work";
+import ContactPhoneIcon from "@material-ui/icons/ContactPhone";
 
 // Components
 import ResumePDF from "../data/resume.pdf";
@@ -52,6 +52,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+// Main Component
 const NavBar = () => {
   // Tabs functions and properties
   const [value, setValue] = React.useState(0);
@@ -132,10 +133,9 @@ const NavBar = () => {
               component={Link}
             />
             <Tab
-              disabled
-              icon={<WorkIcon />}
-              label="Work History"
-              to="/Work History"
+              icon={<ContactPhoneIcon />}
+              label="Contact"
+              to="/Contact"
               component={Link}
             />
             <Tab
