@@ -4,7 +4,6 @@ import { IconButton } from "@material-ui/core";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import ParticlesBackground from "./ParticlesBackground.js";
-import { fade } from "@material-ui/core/styles/colorManipulator";
 import styled, { keyframes } from "styled-components";
 import { fadeIn } from "react-animations";
 import { Typography } from "@material-ui/core";
@@ -77,8 +76,10 @@ const useStyles = makeStyles(theme => ({
     display: "flex"
   },
   aboutMeIcon: {
+    marginBottom: "10px",
     "&:hover": {
-      color: fade("#FFFFFF", 0.6)
+      transition: "0.2s",
+      transform: "scale(1.3)"
     }
   }
 }));
