@@ -58,7 +58,9 @@ const NavBar = () => {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
-    setValue(newValue);
+    if (newValue != 3) {
+      setValue(newValue);
+    }
   };
   function TabPanel(props) {
     const { children, value, index } = props;
