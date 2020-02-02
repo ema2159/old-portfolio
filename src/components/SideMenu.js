@@ -102,19 +102,20 @@ const SideMenu = forwardRef((props, ref) => {
 
   useImperativeHandle(ref, () => {
     return {
-      handleDrawerOpen: handleDrawerOpen
+      handleDrawer: handleDrawerOpen
     };
   });
 
   return (
     <Drawer
       className={classes.drawer}
-      variant="persistent"
+      variant="temporary"
       anchor="left"
       open={open}
       classes={{
         paper: classes.drawerPaper
       }}
+      ModalProps={{ onBackdropClick: handleDrawerClose }}
     >
       <div className={classes.drawerHeader}>
         <IconButton onClick={handleDrawerClose}>
@@ -145,12 +146,16 @@ const SideMenu = forwardRef((props, ref) => {
           <ListItemIcon className={classes.drawerIcon}>
             <ContactPhoneIcon />
           </ListItemIcon>
-          <ListItemText className={classes.drawerText}>
-            Contact
-          </ListItemText>
+          <ListItemText className={classes.drawerText}>Contact</ListItemText>
         </ListItem>
         <Divider />
-        <ListItem button label="Resume" component="a" target="_blank" href={ResumePDF}>
+        <ListItem
+          button
+          label="Resume"
+          component="a"
+          target="_blank"
+          href={ResumePDF}
+        >
           <ListItemIcon className={classes.drawerIcon}>
             <DescriptionIcon />
           </ListItemIcon>

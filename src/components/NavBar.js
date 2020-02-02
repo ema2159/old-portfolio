@@ -94,8 +94,8 @@ const NavBar = () => {
   // Drawer functions and properties
   const ref = useRef(null);
 
-  const handleDrawer = () => {
-    ref.current.handleDrawerOpen();
+  const handleDrawerOpen = () => {
+    ref.current.handleDrawer();
   };
 
   const classes = useStyles();
@@ -106,7 +106,7 @@ const NavBar = () => {
         <Toolbar>
           <IconButton
             className={classes.menuButton}
-            onClick={handleDrawer}
+            onClick={handleDrawerOpen}
             edge="start"
             color="inherit"
             aria-label="menu"
@@ -145,12 +145,11 @@ const NavBar = () => {
               label="Resume"
               target="_blank"
               href={ResumePDF}
-              /* component={Link} */
             />
           </Tabs>
         </Toolbar>
       </AppBar>
-      <SideMenu ref={ref}></SideMenu>
+      <SideMenu ref={ref} />
     </div>
   );
 };
