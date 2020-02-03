@@ -149,7 +149,7 @@ const NavBar = () => {
           </Tabs>
         </Toolbar>
       </AppBar>
-      <SideMenu ref={ref} />
+      <SideMenu tabsHandler={setValue} ref={ref} />
     </div>
   );
 };
