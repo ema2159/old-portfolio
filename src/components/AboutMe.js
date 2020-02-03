@@ -78,6 +78,7 @@ const useStyles = makeStyles(theme => ({
   },
   aboutMeIcon: {
     marginBottom: "10px",
+      transition: "0.2s",
     "&:hover": {
       transition: "0.2s",
       transform: "scale(1.3)"
