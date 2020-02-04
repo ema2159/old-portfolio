@@ -9,7 +9,14 @@ import ListItemText from "@material-ui/core/ListItemText";
 import MailIcon from "@material-ui/icons/Mail";
 import PhoneAndroidIcon from "@material-ui/icons/PhoneAndroid";
 import TrinityRingsSpinner from "@bit/bondz.react-epic-spinners.trinity-rings-spinner";
+import styled, { keyframes } from "styled-components";
+import { bounceInLeft, bounceInRight } from "react-animations";
 
+// Colors declaration
+const colors = {primary: "#D8DEE9",
+                secondary: "#152931"};
+
+// Styles
 const useStyles = makeStyles(theme => ({
   root: {
     position: "relative",
@@ -24,7 +31,7 @@ const useStyles = makeStyles(theme => ({
     width: "50vw",
     justifyContent: "center",
     alignItems: "center",
-    background: "#152931",
+    background: colors.primary,
     ['@media (max-width:1100px)']: {
       height: "50vh",
       width: "100vw",
@@ -34,22 +41,28 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     flexFlow: "column",
     alignItems: "center",
+    justifyContent: "space-around",
     borderRadius: "15px",
-    height: "40%",
-    width: "66%",
-    background: "#edefff",
+    height: "40vh",
+    width: "30vw",
+    background: colors.secondary,
     transition: "0.2s",
     "&:hover": {
       transition: "0.2s",
       transform: "translateX(2vw)"
     },
     ['@media (max-width:1100px)']: {
-      height: "60%",
-      width: "70%",
+      height: "30vh",
+      width: "70vw",
     },
   },
+  headerContainer: {
+    display: "flex",
+    flexFlow: "column",
+    alignItems: "center",
+  },
   name: {
-    color: "#152931",
+    color: colors.primary,
     fontSize: "1.8vw",
     marginBottom: 0,
     textAlign: "center",
@@ -59,7 +72,7 @@ const useStyles = makeStyles(theme => ({
   },
   headerDividerLeft: {
     border: 0,
-    borderTop: "5px dotted #152931",
+    borderTop: `5px dotted ${colors.primary}`,
     marginBottom: 0,
     ["@media (max-width:312px)"]: {
       marginTop: "15px"
@@ -68,12 +81,18 @@ const useStyles = makeStyles(theme => ({
     height: "5"
   },
   description: {
-    color: "#152931",
+    color: colors.primary,
     textAlign: "justify",
     width: "80%",
     fontSize: "calc(8px + 0.5vw)",
+    marginBottom: 0,
     ['@media (max-width:1100px)']: {
       fontSize: "calc(10px + 0.4vw)",
+    },
+  },
+  rings: {
+    ['@media (max-width:1100px)']: {
+      transform: "scale(0.6)",
     },
   },
   right: {
@@ -81,7 +100,7 @@ const useStyles = makeStyles(theme => ({
     width: "50vw",
     justifyContent: "center",
     alignItems: "center",
-    background: "#edefff",
+    background: colors.secondary,
     ['@media (max-width:1100px)']: {
       height: "50vh",
       width: "100vw",
@@ -92,23 +111,23 @@ const useStyles = makeStyles(theme => ({
     flexFlow: "column",
     alignItems: "flex-start",
     borderRadius: "15px",
-    height: "40%",
-    width: "60%",
-    background: "#152931",
+    height: "40vh",
+    width: "30vw",
+    background: colors.primary,
     transition: "0.2s",
     "&:hover": {
       transition: "0.2s",
       transform: "translateX(-2vw)"
     },
     ['@media (max-width:1100px)']: {
-      height: "60%",
-      width: "70%",
+      height: "30vh",
+      width: "70vw",
     },
   },
   contactMe: {
     width: "100%",
     fontSize: "2vw",
-    color: "#D8DEE9",
+    color: colors.secondary,
     marginBottom: 0,
     textAlign: "center",
     ['@media (max-width:1100px)']: {
@@ -117,7 +136,7 @@ const useStyles = makeStyles(theme => ({
   },
   headerDividerRight: {
     border: 0,
-    borderTop: "5px dotted #D8DEE9",
+    borderTop: `5px dotted ${colors.secondary}`,
     ["@media (max-width:312px)"]: {
       marginTop: "15px"
     },
@@ -132,65 +151,83 @@ const useStyles = makeStyles(theme => ({
     marginRight: "1vw",
   },
   listIcon: {
-    color: "#D8DEE9",
+    color: colors.secondary,
     fontSize: "calc(20px + 0.8vw)",
     ['@media (max-width:1100px)']: {
       fontSize: "calc(25px + 0.4vw)",
     },
   },
   listText: {
-    color: "#D8DEE9",
+    color: colors.secondary,
     fontSize: "calc(12px + 0.5vw)",
     ['@media (max-width:1100px)']: {
       fontSize: "calc(10px + 0.4vw)",
     },
-  }
+  },
 }));
 
+// Animations
+const SlideLeftAnim = styled.div`
+  animation: 0.5s ${keyframes(bounceInLeft)};
+`;
+const SlideRightAnim = styled.div`
+  animation: 0.5s ${keyframes(bounceInRight)};
+`;
+
+
+// Main component
 const Contact = () => {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
       <div className={classes.left}>
-        <div className={classes.leftContainer}>
-          <h1 className={classes.name}>Emmanuel Bustos Torres</h1>
-          <hr className={classes.headerDividerLeft} />
-          <h4 className={classes.description}>
-            I'm a young engineer who loves to learn and to build stuff. If you
-            need anything from me, send me an email and I'll be glad to help
-            you!
-          </h4>
-          <TrinityRingsSpinner
-            color="#152931"
-            size="100"
-            animationDuration="1000"
-          />
-        </div>
+        <SlideLeftAnim>
+	  <div className={classes.leftContainer}>
+            <div className={classes.headerContainer}>
+	      <h1 className={classes.name}>Emmanuel Bustos Torres</h1>
+	      <hr className={classes.headerDividerLeft} />
+	    <h4 className={classes.description}>
+	      I'm a young engineer who loves to learn and to build stuff. If you
+	      need anything from me, send me an email and I'll be glad to help
+	      you!
+	    </h4>
+            </div>
+	    <div className={classes.rings}>
+	      <TrinityRingsSpinner
+		color={colors.primary}
+		size="100"
+		animationDuration="1000"
+	      />
+	    </div>
+	  </div>
+        </SlideLeftAnim>
       </div>
       <div className={classes.right}>
-        <div className={classes.rightContainer}>
-          <h1 className={classes.contactMe}>Contact Me</h1>
-          <hr className={classes.headerDividerRight} />
-          <List className={classes.list}>
-            <ListItem>
-              <ListItemIcon className={classes.listItemIcon}>
-                <PhoneAndroidIcon className={classes.listIcon} />
-              </ListItemIcon>
-              <ListItemText>
-                <p className={classes.listText}>(+506) 8730-9726</p>
-              </ListItemText>
-            </ListItem>
-            <ListItem>
-              <ListItemIcon className={classes.listItemIcon}>
-                <MailIcon className={classes.listIcon} />
-              </ListItemIcon>
-              <ListItemText className={classes.listText}>
-                <p className={classes.listText}>ema2159@gmail.com</p>
-              </ListItemText>
-            </ListItem>
-          </List>
-        </div>
+        <SlideRightAnim>
+	  <div className={classes.rightContainer}>
+	    <h1 className={classes.contactMe}>Contact Me</h1>
+	    <hr className={classes.headerDividerRight} />
+	    <List className={classes.list}>
+	      <ListItem>
+		<ListItemIcon className={classes.listItemIcon}>
+		  <PhoneAndroidIcon className={classes.listIcon} />
+		</ListItemIcon>
+		<ListItemText>
+		  <p className={classes.listText}>(+506) 8730-9726</p>
+		</ListItemText>
+	      </ListItem>
+	      <ListItem>
+		<ListItemIcon className={classes.listItemIcon}>
+		  <MailIcon className={classes.listIcon} />
+		</ListItemIcon>
+		<ListItemText className={classes.listText}>
+		  <p className={classes.listText}>ema2159@gmail.com</p>
+		</ListItemText>
+	      </ListItem>
+	    </List>
+          </div>
+        </SlideRightAnim>
       </div>
     </div>
   );
