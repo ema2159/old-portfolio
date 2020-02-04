@@ -33,10 +33,10 @@ const useStyles = makeStyles(theme => ({
   innerGrid: {
     width: "90vw",
     justifyContent: "center",
-    ['@media (max-width:1100px)']: {
+    ["@media (max-width:1100px)"]: {
       width: "90vw",
-      justifyContent: "center",
-    },
+      justifyContent: "center"
+    }
   },
   paper: {
     height: "30vh",
@@ -47,10 +47,10 @@ const useStyles = makeStyles(theme => ({
     flexFlow: "column",
     alignItems: "center",
     background: "#F8F8F8",
-    ['@media (max-width:780px)']: {
+    ["@media (max-width:780px)"]: {
       width: "60vw",
-      justifyContent: "center",
-    },
+      justifyContent: "center"
+    }
   },
   header: {
     position: "relative",
@@ -73,7 +73,7 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     flexFlow: "column",
     justifyContent: "space-between",
-    overflow: "auto",
+    overflow: "auto"
   },
   text: {
     textAlign: "justify",
@@ -83,9 +83,9 @@ const useStyles = makeStyles(theme => ({
     marginBottom: "5%",
     color: "#264653",
     fontSize: "calc(10px + 0.3vw)",
-    ['@media (max-width:780px)']: {
-      fontSize: "calc(12px + 0.3vw)",
-    },
+    ["@media (max-width:780px)"]: {
+      fontSize: "calc(12px + 0.3vw)"
+    }
   },
   image: {
     height: "auto",
@@ -102,7 +102,7 @@ const useStyles = makeStyles(theme => ({
     width: "70%"
   },
   buttonContainer: {
-    marginBottom: "10px",
+    marginBottom: "10px"
   },
   githubButton: {
     color: "#264653",

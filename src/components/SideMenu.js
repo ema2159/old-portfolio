@@ -128,21 +128,39 @@ const SideMenu = forwardRef((props, ref) => {
       </div>
       <List>
         <Divider />
-        <ListItem button="true" onClick={(event) => props.tabsHandler(0, event)} label="About Me" to="/" component={Link}>
+        <ListItem
+          button="true"
+          onClick={event => props.tabsHandler(0, event)}
+          label="About Me"
+          to="/"
+          component={Link}
+        >
           <ListItemIcon className={classes.drawerIcon}>
             <PersonPinIcon />
           </ListItemIcon>
           <ListItemText className={classes.drawerText}>About Me</ListItemText>
         </ListItem>
         <Divider />
-        <ListItem button="true" onClick={(event) => props.tabsHandler(1, event)} label="Projects" to="/Projects" component={Link}>
+        <ListItem
+          button="true"
+          onClick={event => props.tabsHandler(1, event)}
+          label="Projects"
+          to="/Projects"
+          component={Link}
+        >
           <ListItemIcon className={classes.drawerIcon}>
             <AccountTreeIcon />
           </ListItemIcon>
           <ListItemText className={classes.drawerText}>Projects</ListItemText>
         </ListItem>
         <Divider />
-        <ListItem button onClick={(event) => props.tabsHandler(2, event)} label="Contact" to="/Contact" component={Link}>
+        <ListItem
+          button
+          onClick={event => props.tabsHandler(2, event)}
+          label="Contact"
+          to="/Contact"
+          component={Link}
+        >
           <ListItemIcon className={classes.drawerIcon}>
             <ContactPhoneIcon />
           </ListItemIcon>

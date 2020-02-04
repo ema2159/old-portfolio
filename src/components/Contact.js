@@ -13,8 +13,7 @@ import styled, { keyframes } from "styled-components";
 import { bounceInLeft, bounceInRight } from "react-animations";
 
 // Colors declaration
-const colors = {primary: "#D8DEE9",
-                secondary: "#152931"};
+const colors = { primary: "#D8DEE9", secondary: "#152931" };
 
 // Styles
 const useStyles = makeStyles(theme => ({
@@ -22,9 +21,9 @@ const useStyles = makeStyles(theme => ({
     position: "relative",
     display: "flex",
     height: "100%",
-    ['@media (max-width:1100px)']: {
+    ["@media (max-width:1100px)"]: {
       flexFlow: "column"
-    },
+    }
   },
   left: {
     display: "flex",
@@ -32,10 +31,10 @@ const useStyles = makeStyles(theme => ({
     justifyContent: "center",
     alignItems: "center",
     background: colors.primary,
-    ['@media (max-width:1100px)']: {
+    ["@media (max-width:1100px)"]: {
       height: "50vh",
-      width: "100vw",
-    },
+      width: "100vw"
+    }
   },
   leftContainer: {
     display: "flex",
@@ -51,24 +50,24 @@ const useStyles = makeStyles(theme => ({
       transition: "0.2s",
       transform: "translateX(2vw)"
     },
-    ['@media (max-width:1100px)']: {
+    ["@media (max-width:1100px)"]: {
       height: "30vh",
-      width: "70vw",
-    },
+      width: "70vw"
+    }
   },
   headerContainer: {
     display: "flex",
     flexFlow: "column",
-    alignItems: "center",
+    alignItems: "center"
   },
   name: {
     color: colors.primary,
     fontSize: "1.8vw",
     marginBottom: 0,
     textAlign: "center",
-    ['@media (max-width:1100px)']: {
-      fontSize: "calc(12px + 0.7vw)",
-    },
+    ["@media (max-width:1100px)"]: {
+      fontSize: "calc(12px + 0.7vw)"
+    }
   },
   headerDividerLeft: {
     border: 0,
@@ -86,14 +85,14 @@ const useStyles = makeStyles(theme => ({
     width: "80%",
     fontSize: "calc(8px + 0.5vw)",
     marginBottom: 0,
-    ['@media (max-width:1100px)']: {
-      fontSize: "calc(10px + 0.4vw)",
-    },
+    ["@media (max-width:1100px)"]: {
+      fontSize: "calc(10px + 0.4vw)"
+    }
   },
   rings: {
-    ['@media (max-width:1100px)']: {
-      transform: "scale(0.6)",
-    },
+    ["@media (max-width:1100px)"]: {
+      transform: "scale(0.6)"
+    }
   },
   right: {
     display: "flex",
@@ -101,10 +100,10 @@ const useStyles = makeStyles(theme => ({
     justifyContent: "center",
     alignItems: "center",
     background: colors.secondary,
-    ['@media (max-width:1100px)']: {
+    ["@media (max-width:1100px)"]: {
       height: "50vh",
-      width: "100vw",
-    },
+      width: "100vw"
+    }
   },
   rightContainer: {
     display: "flex",
@@ -119,10 +118,10 @@ const useStyles = makeStyles(theme => ({
       transition: "0.2s",
       transform: "translateX(-2vw)"
     },
-    ['@media (max-width:1100px)']: {
+    ["@media (max-width:1100px)"]: {
       height: "30vh",
-      width: "70vw",
-    },
+      width: "70vw"
+    }
   },
   contactMe: {
     width: "100%",
@@ -130,9 +129,9 @@ const useStyles = makeStyles(theme => ({
     color: colors.secondary,
     marginBottom: 0,
     textAlign: "center",
-    ['@media (max-width:1100px)']: {
-      fontSize: "calc(12px + 0.7vw)",
-    },
+    ["@media (max-width:1100px)"]: {
+      fontSize: "calc(12px + 0.7vw)"
+    }
   },
   headerDividerRight: {
     border: 0,
@@ -148,22 +147,22 @@ const useStyles = makeStyles(theme => ({
   },
   listItemIcon: {
     minWidth: "30px",
-    marginRight: "1vw",
+    marginRight: "1vw"
   },
   listIcon: {
     color: colors.secondary,
     fontSize: "calc(20px + 0.8vw)",
-    ['@media (max-width:1100px)']: {
-      fontSize: "calc(25px + 0.4vw)",
-    },
+    ["@media (max-width:1100px)"]: {
+      fontSize: "calc(25px + 0.4vw)"
+    }
   },
   listText: {
     color: colors.secondary,
     fontSize: "calc(12px + 0.5vw)",
-    ['@media (max-width:1100px)']: {
-      fontSize: "calc(10px + 0.4vw)",
-    },
-  },
+    ["@media (max-width:1100px)"]: {
+      fontSize: "calc(10px + 0.4vw)"
+    }
+  }
 }));
 
 // Animations
@@ -174,7 +173,6 @@ const SlideRightAnim = styled.div`
   animation: 0.5s ${keyframes(bounceInRight)};
 `;
 
-
 // Main component
 const Contact = () => {
   const classes = useStyles();
@@ -183,49 +181,49 @@ const Contact = () => {
     <div className={classes.root}>
       <div className={classes.left}>
         <SlideLeftAnim>
-	  <div className={classes.leftContainer}>
+          <div className={classes.leftContainer}>
             <div className={classes.headerContainer}>
-	      <h1 className={classes.name}>Emmanuel Bustos Torres</h1>
-	      <hr className={classes.headerDividerLeft} />
-	    <h4 className={classes.description}>
-	      I'm a young engineer who loves to learn and to build stuff. If you
-	      need anything from me, send me an email and I'll be glad to help
-	      you!
-	    </h4>
+              <h1 className={classes.name}>Emmanuel Bustos Torres</h1>
+              <hr className={classes.headerDividerLeft} />
+              <h4 className={classes.description}>
+                I'm a young engineer who loves to learn and to build stuff. If
+                you need anything from me, send me an email and I'll be glad to
+                help you!
+              </h4>
             </div>
-	    <div className={classes.rings}>
-	      <TrinityRingsSpinner
-		color={colors.primary}
-		size="100"
-		animationDuration="1000"
-	      />
-	    </div>
-	  </div>
+            <div className={classes.rings}>
+              <TrinityRingsSpinner
+                color={colors.primary}
+                size="100"
+                animationDuration="1000"
+              />
+            </div>
+          </div>
         </SlideLeftAnim>
       </div>
       <div className={classes.right}>
         <SlideRightAnim>
-	  <div className={classes.rightContainer}>
-	    <h1 className={classes.contactMe}>Contact Me</h1>
-	    <hr className={classes.headerDividerRight} />
-	    <List className={classes.list}>
-	      <ListItem>
-		<ListItemIcon className={classes.listItemIcon}>
-		  <PhoneAndroidIcon className={classes.listIcon} />
-		</ListItemIcon>
-		<ListItemText>
-		  <p className={classes.listText}>(+506) 8730-9726</p>
-		</ListItemText>
-	      </ListItem>
-	      <ListItem>
-		<ListItemIcon className={classes.listItemIcon}>
-		  <MailIcon className={classes.listIcon} />
-		</ListItemIcon>
-		<ListItemText className={classes.listText}>
-		  <p className={classes.listText}>ema2159@gmail.com</p>
-		</ListItemText>
-	      </ListItem>
-	    </List>
+          <div className={classes.rightContainer}>
+            <h1 className={classes.contactMe}>Contact Me</h1>
+            <hr className={classes.headerDividerRight} />
+            <List className={classes.list}>
+              <ListItem>
+                <ListItemIcon className={classes.listItemIcon}>
+                  <PhoneAndroidIcon className={classes.listIcon} />
+                </ListItemIcon>
+                <ListItemText>
+                  <p className={classes.listText}>(+506) 8730-9726</p>
+                </ListItemText>
+              </ListItem>
+              <ListItem>
+                <ListItemIcon className={classes.listItemIcon}>
+                  <MailIcon className={classes.listIcon} />
+                </ListItemIcon>
+                <ListItemText className={classes.listText}>
+                  <p className={classes.listText}>ema2159@gmail.com</p>
+                </ListItemText>
+              </ListItem>
+            </List>
           </div>
         </SlideRightAnim>
       </div>

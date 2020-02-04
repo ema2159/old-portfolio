@@ -6,6 +6,7 @@ import Resume from "./Resume.js";
 import Contact from "./Contact.js";
 import Projects from "./Projects.js";
 
+// Main routing component
 const Main = () => {
   return (
     <Switch>

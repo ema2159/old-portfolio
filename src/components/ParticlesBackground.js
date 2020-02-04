@@ -1,6 +1,7 @@
 import React from "react";
 import Particles from "react-particles-js";
 
+// Main component
 const ParticlesBackground = () => {
   return (
     <div
@@ -61,7 +62,7 @@ const ParticlesBackground = () => {
               resize: true
             },
             modes: {
-              grab: { distance: 300, line_linked: { opacity: 1 } },
+              grab: { distance: 300, line_linked: { opacity: 1 } }
             }
           },
           retina_detect: true
