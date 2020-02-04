@@ -1,3 +1,10 @@
+/*!
+ * is-plain-object <https://github.com/jonschlinkert/is-plain-object>
+ *
+ * Copyright (c) 2014-2017, Jon Schlinkert.
+ * Released under the MIT License.
+ */
+
 /**
    * @licstart The following is the entire license notice for the
    * Javascript code in this page
@@ -25,6 +32,17 @@ object-assign
 (c) Sindre Sorhus
 @license MIT
 */
+
+/*
+ *          __        ___
+ *    _____/ /___  __/ (_)____
+ *   / ___/ __/ / / / / / ___/
+ *  (__  ) /_/ /_/ / / (__  )
+ * /____/\__/\__, /_/_/____/
+ *          /____/
+ *
+ * light - weight css preprocessor @licence MIT
+ */
 
 /** @license React v16.12.0
  * react.production.min.js
@@ -60,6 +78,13 @@ object-assign
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
+ */
+
+/*!
+ * isobject <https://github.com/jonschlinkert/isobject>
+ *
+ * Copyright (c) 2014-2017, Jon Schlinkert.
+ * Released under the MIT License.
  */
 
 /**
