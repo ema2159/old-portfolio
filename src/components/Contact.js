@@ -37,6 +37,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
   leftContainer: {
+    overflow: "auto",
     display: "flex",
     flexFlow: "column",
     alignItems: "center",
@@ -106,6 +107,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
   rightContainer: {
+    overflow: "auto",
     display: "flex",
     flexFlow: "column",
     alignItems: "flex-start",
