@@ -10,7 +10,7 @@
     "id": 1,
     "name": "Doom Themes",
     "image": "emacsImage",
-    "description": "Maintainer. Emacs themes plugin with over 1000 Github stars and over 190.000 downloads",
+    "description": "Maintainer. Emacs themes plugin with over 1000 Github stars and over 190.000 downloads.",
     "github": "https://github.com/hlissner/emacs-doom-themes"
   },
   {
