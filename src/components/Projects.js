@@ -88,11 +88,13 @@ const useStyles = makeStyles(theme => ({
     }
   },
   image: {
-    height: "auto",
-    width: "auto",
+    height: "2.7vw",
+    width: "2.7vw",
     marginLeft: "10px",
-    maxWidth: "50%",
-    maxHeight: "50%"
+    ["@media (max-width:780px)"]: {
+      height: "30px",
+      width: "30px",
+    }
   },
   headerDivider: {
     border: 0,
