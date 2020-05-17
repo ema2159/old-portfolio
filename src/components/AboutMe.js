@@ -33,7 +33,10 @@ const useStyles = makeStyles(theme => ({
     ["@media (max-width:1100px)"]: {
       width: "90vw"
     },
-    opacity: 0.8
+    opacity: 0.8,
+    "&:hover": {
+      opacity: 0.85,
+    }
   },
   avatar: {
     position: "relative",
