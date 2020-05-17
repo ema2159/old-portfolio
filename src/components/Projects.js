@@ -96,7 +96,7 @@ const useStyles = makeStyles(theme => ({
     marginLeft: "10px",
     ["@media (max-width:780px)"]: {
       height: "30px",
-      width: "30px",
+      width: "30px"
     }
   },
   headerDivider: {
@@ -153,32 +153,37 @@ const Projects = () => {
                     : "1.8s"
                 }
               >
-                <Paper className={classes.paper}>
-                  <div className={classes.header}>
-                    <img className={classes.image} src={eval(project.image)} />
-                    <h1 className={classes.title}>{project.name}</h1>
-                  </div>
-                  <div className={classes.body}>
-                    <div>
-                      <Typography variant="body1" className={classes.text}>
-                        {project.description}
-                      </Typography>
-                      <hr className={classes.headerDivider} />
+                <div>
+                  <Paper className={classes.paper}>
+                    <div className={classes.header}>
+                      <img
+                        className={classes.image}
+                        src={eval(project.image)}
+                      />
+                      <h1 className={classes.title}>{project.name}</h1>
                     </div>
-                    <div className={classes.buttonContainer}>
-                      <Button
-                        className={classes.githubButton}
-                        variant="outlined"
-                        color="primary"
-                        size="medium"
-                        href={project.github}
-                        target="_blank"
-                      >
-                        Github
-                      </Button>
+                    <div className={classes.body}>
+                      <div>
+                        <Typography variant="body1" className={classes.text}>
+                          {project.description}
+                        </Typography>
+                        <hr className={classes.headerDivider} />
+                      </div>
+                      <div className={classes.buttonContainer}>
+                        <Button
+                          className={classes.githubButton}
+                          variant="outlined"
+                          color="primary"
+                          size="medium"
+                          href={project.github}
+                          target="_blank"
+                        >
+                          Github
+                        </Button>
+                      </div>
                     </div>
-                  </div>
-                </Paper>
+                  </Paper>
+                </div>
               </ProjectsAnimation>
             </Grid>
           ))}
